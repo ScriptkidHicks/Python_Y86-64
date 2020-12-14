@@ -6,14 +6,16 @@ Nov 2020
 
 This was inspired by the Y86-64 simulator we used in CIS 314.
 Credit goes to github user Boginw for the original simulator,
-written in JS, HTML, and CSS. At the time I was making this
-we were in the middle of the pandemic, and students were all
-learning from home. I was reading frequently of poor students
-with bad internet connection having trouble with access to
-school materials. I decided I wanted to build a desktop
-version of the Y86-64 simulator so that students with poor
-internet access would still have access to relevant learning
-materials.
+written in JS, HTML, and CSS. I've worked with the simulator
+that they built, but haven't looked directly at their code,
+so this version is largely my own implementation.
+  At the time I was making this we were in the middle of the 
+pandemic, and students were all learning from home. 
+I was reading frequently of poor students with bad internet 
+connection having trouble with access to school materials. 
+I decided I wanted to build a desktop version of the Y86-64 
+simulator so that students with poor internet access would 
+still have access to relevant learning materials.
 
 As time goes on I'm going to keep releasing features for this.
 Ideally this will include a 'compiler' which can compile
