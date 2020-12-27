@@ -1,15 +1,22 @@
 """
-This class is used as an abstraction for the
-memory writing phase of the Y86-64 processor
-cycle.
+The Memorizer object relies on pulling and storing
+from memory, as well as values from val bank.
 """
 from ValBank import ValBank
 from Memory import Memory
 
 
 class Memorizer:
+    """
+    This object is used to abstract the memory writing step
+    of the Y86-64 processor's run cycle.
+    """
 
     def __init__(self, val_bank: ValBank, memory: Memory):
+        """
+        The valbank and memory references indicate the
+        parent processor's memory and valbank.
+        """
         self.ValBank = val_bank
         self.Memory = memory
 
@@ -21,6 +28,10 @@ class Memorizer:
             self.op_lib[key] = self.__nops
 
     def __nops(self):
+        """
+        All instructions that have no memory write back have been
+        packed into the 'no ops' function.
+        """
         pass
 
     def __rmmovq(self):
@@ -42,4 +53,7 @@ class Memorizer:
         self.ValBank.valM = self.Memory.pull_value(self.ValBank.valA, 8)
 
     def memory_write(self):
+        """
+        The publically available method called by 'run'
+        """
         self.op_lib[self.ValBank.OP]()
